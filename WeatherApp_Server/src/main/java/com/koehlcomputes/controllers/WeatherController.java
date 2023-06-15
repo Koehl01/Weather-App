@@ -13,7 +13,8 @@ public class WeatherController {
     @Autowired
     WeatherService weatherService;
     @RequestMapping(path="/weather", method= RequestMethod.GET)
-    public Response getTest(@RequestBody Request request){
+    public Response getTest(@RequestParam String query, @RequestParam String units){
+        Request request = new Request(query, units);
         return weatherService.getWeather(request);
     }
 }

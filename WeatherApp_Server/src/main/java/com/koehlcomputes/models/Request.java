@@ -9,6 +9,11 @@ public class Request {
     @JsonProperty(value = "units")
     private String units;
 
+    public Request (String query, String units){
+        this.query = query;
+        this.units = units;
+    }
+
     public String getQuery() {
         return query;
     }
