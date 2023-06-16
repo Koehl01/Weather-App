@@ -1,13 +1,12 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+  <div class="weather">
     <Weather msg="Here is the weather"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Weather from '../components/Weather.vue'
+import Weather from '@/components/Weather.vue'
 
 export default {
   name: 'HomeView',

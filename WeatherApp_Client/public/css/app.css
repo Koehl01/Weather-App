@@ -1,0 +1,75 @@
+body {
+  background-image: url(https://s.w-x.co/WeatherImages_Web/WeatherImage_PartlyCloudy-day_5.jpg?crop=16:9&width=2000&format=pjpg&);
+}
+
+#app {
+    margin-top: 20px;
+    height: 97vh;
+    display: grid;
+    grid-template-columns: 250px auto 250px;
+    grid-template-rows: 65px auto 100px;
+    grid-template-areas:
+    "header header header"
+    "news view ads"
+    "footer footer footer";
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+
+  }
+
+  nav {
+    grid-area: header;
+    padding: 10px;
+    background-color: aliceblue;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+
+  }
+
+  #local-news {
+    grid-area: news;
+    margin: 10px;
+    margin-left: 0;
+    background-color: aliceblue;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+  }
+
+  #ads {
+    grid-area: ads;
+    margin: 10px;
+    margin-right: 0;
+    background-color: aliceblue;
+    border: 1px solid lightblue;
+    border-radius: 10px;
+  }
+
+  #route-view {
+    grid-area: view;
+    margin: 100px;
+    border: 1px solid lightblue;
+    border-radius: 10px;
+
+  }
+
+  footer {
+    grid-area: footer;
+    width: 100%;
+    background-color: aliceblue;
+    border: 1px solid lightblue;
+    border-radius: 10px;
+
+
+  }
+
+  nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  nav a.router-link-exact-active {
+    color: #42b983;
+  }

@@ -1,8 +1,10 @@
 
 
 <template>
-  <div class="hello">
-    <h1>{{ weather }}</h1>
+  <div class="weather">
+    <button v-on:click="getWeatherReport">Get Weather</button>
+    <p>{{ weather.weatherInfo.weatherCode }}</p>
+    <img v-bind:src="this.weather.weatherInfo.weatherIcon"/>
   </div>
 </template>
 
@@ -15,8 +17,31 @@ export default {
   data(){
     return {
       weather:{
-        locationInfo:{},
-        weatherInfo: {}
+        locationInfo:{
+          name: "",
+          country: "",
+          region: "",
+          lat: "",
+          lon: "",
+          timeZoneId: "",
+          localTime: ""
+        },
+        weatherInfo: {
+          observationTime: "",
+          temperatur: 0,
+          weatherCode: 0,
+          weatherIcon: "",
+          weatherDescriptions: "",
+          windSpeed: 0,
+          windDir: "",
+          pressure: 0,
+          humidity: 0,
+          cloudCover: 0,
+          feelsLike: 0,
+          uvIndex: 0,
+          visibility: 0,
+          isDay: ""
+        }
 
       },
       request: {
@@ -25,15 +50,18 @@ export default {
       }
     }
   },
-  created() {
-    weatherService.getWeatherReport(this.request).then((response) => {
-      this.weather = response.data;
-    });
+  methods:{
+    getWeatherReport() {
+      weatherService.getWeatherReport(this.request).then((response) => {
+        this.weather = response.data;
+      });
+    }
   }
+
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped src="@/../public/css/weather.css">
 
 </style>
