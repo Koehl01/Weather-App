@@ -1,5 +1,5 @@
 <template>
-  <div class="weather">
+  <div>
     <Weather msg="Here is the weather"/>
   </div>
 </template>

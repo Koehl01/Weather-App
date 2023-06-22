@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <nav>
-      <h1>Title</h1>
-    </nav>
+    <nav-component />
     <news-component />
     <ads-component />
     <router-view id="route-view"/>
@@ -13,10 +11,12 @@
 <script>
 import adsComponent from './components/AdsComponent.vue'
 import newsComponent from './components/NewsComponent.vue'
+import navComponent from './components/NavComponent.vue'
 export default{
   components:{
     adsComponent,
-    newsComponent
+    newsComponent,
+    navComponent
   }
 }
 </script>

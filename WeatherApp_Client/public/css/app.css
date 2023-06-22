@@ -1,5 +1,6 @@
 body {
-  background-image: url(https://s.w-x.co/WeatherImages_Web/WeatherImage_PartlyCloudy-day_5.jpg?crop=16:9&width=2000&format=pjpg&);
+  background-image: url(https://img.freepik.com/free-photo/dramatic-white-clouds-blue-sky-from-airplane-window-view-colorful-sunset-cloudscape-background_90220-1208.jpg?t=st=1687472037~exp=1687472637~hmac=72b600d739e15018c71f9054bdd8fc89fde22417cc5dccaf5098ef5e6d5de93f&w=1800);
+  background-size:cover;
 }
 
 #app {
@@ -20,11 +21,10 @@ body {
 
   }
 
-  nav {
+  #nav-bar {
     grid-area: header;
     padding: 10px;
-    background-color: aliceblue;
-    border: 1px solid lightgrey;
+    background-color: rgb(55, 93, 126);
     border-radius: 10px;
 
   }
@@ -49,17 +49,15 @@ body {
 
   #route-view {
     grid-area: view;
-    margin: 100px;
-    border: 1px solid lightblue;
-    border-radius: 10px;
+    margin: 10px 0 10px 0;
 
   }
 
   footer {
     grid-area: footer;
     width: 100%;
-    background-color: aliceblue;
-    border: 1px solid lightblue;
+    background-color: rgb(163, 195, 223);
+
     border-radius: 10px;
 
 

@@ -1,1 +1,54 @@
+#weather-overview {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
+#weather {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+    margin: 50px 50px 100px 50px;
+    height: 30%;
+}
+
+#get-weather-button {
+    margin-top: 30px;
+    height: 50px;
+}
+
+#temp-number {
+
+    font-size: 5em;
+    margin: 0;
+}
+
+#weather-description {
+    font-size: 1.5em;
+    margin: 0;
+}
+#location{
+    color: white;
+    font-size: 1.5em;
+    margin-left: 50px;
+    text-align: start;
+    height: 40px;
+}
+
+#forcast {
+    background-color: aliceblue;
+    border: 5px solid rgb(219, 180, 255);
+    border-radius: 10px;
+    flex-grow: 1;
+    ;
+}
+
+#wind-direction{
+    font-size: 5em;
+    margin:0;
+}
+#wind-speed{
+    margin-top: 0;
+    font-size: 1.5em;
+}

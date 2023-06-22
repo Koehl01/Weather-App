@@ -1,11 +1,26 @@
 
 
 <template>
-  <div class="weather">
-    <button v-on:click="getWeatherReport">Get Weather</button>
-    <p>{{ weather.weatherInfo.weatherCode }}</p>
-    <img v-bind:src="this.weather.weatherInfo.weatherIcon"/>
+  <div id="weather-overview">
+      <div id="weather">
+      <div id="temp">
+        <p id="temp-number">{{ weather.weatherInfo.temperature }}</p>
+        <p id="weather-description">{{ weather.weatherInfo.weatherDescriptions }}</p>
+      </div>
+      
+      <div id="wind">
+        <p id="wind-direction"><span>{{ weather.weatherInfo.windDir }}</span></p>
+        <p id="wind-speed"><span>{{ weather.weatherInfo.windSpeed }}</span>  mph</p>
+      </div>
+    </div>
+    <div id="location">
+      {{ weather.locationInfo.name }}, {{ weather.locationInfo.region }}
+    </div>
+    <div id="forcast">
+      7-day forcast
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -18,9 +33,9 @@ export default {
     return {
       weather:{
         locationInfo:{
-          name: "",
+          name: "Streetsboro",
           country: "",
-          region: "",
+          region: "Ohio",
           lat: "",
           lon: "",
           timeZoneId: "",
@@ -28,12 +43,12 @@ export default {
         },
         weatherInfo: {
           observationTime: "",
-          temperatur: 0,
+          temperature: 72,
           weatherCode: 0,
           weatherIcon: "",
-          weatherDescriptions: "",
-          windSpeed: 0,
-          windDir: "",
+          weatherDescriptions: "sunny",
+          windSpeed: 3,
+          windDir: "N",
           pressure: 0,
           humidity: 0,
           cloudCover: 0,
