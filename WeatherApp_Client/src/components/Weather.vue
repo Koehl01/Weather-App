@@ -7,7 +7,7 @@
         <p id="temp-number">{{ weather.weatherInfo.temperature }}</p>
         <p id="weather-description">{{ weather.weatherInfo.weatherDescriptions }}</p>
       </div>
-      
+
       <div id="wind">
         <p id="wind-direction"><span>{{ weather.weatherInfo.windDir }}</span></p>
         <p id="wind-speed"><span>{{ weather.weatherInfo.windSpeed }}</span>  mph</p>
@@ -25,12 +25,14 @@
 
 <script>
 import weatherService from '@/services/WeatherService';
+import IPService from '@/services/IPService';
 
 export default {
   name: 'HelloWorld',
   props:["msg"],
   data(){
     return {
+      ipAddress: 0,
       weather:{
         locationInfo:{
           name: "Streetsboro",
@@ -60,7 +62,7 @@ export default {
 
       },
       request: {
-        query: "streetsboro, OH",
+        query: "New York, New York",
         units: "f"
       }
     }
@@ -71,6 +73,14 @@ export default {
         this.weather = response.data;
       });
     }
+  },
+  created() {
+    IPService.getIPAddress().then((response) => response.json().then(data => {
+      this.ipAddress = data.ip;
+      this.request.query = this.ipAddress;
+      this.getWeatherReport();
+    }));
+
   }
 
 }
