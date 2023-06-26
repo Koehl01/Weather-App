@@ -7,7 +7,6 @@
 
 .hash {
     height: 65px;
-
     margin: 0 -10px;
 }
 
@@ -41,7 +40,9 @@
 
 #search-input {
     border-radius: 10px;
+    padding-left: 10px;
     width: 250px;
+    height: 16px;
 }
 
 #login-register {

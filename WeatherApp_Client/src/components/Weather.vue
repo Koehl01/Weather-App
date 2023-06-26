@@ -25,14 +25,12 @@
 
 <script>
 import weatherService from '@/services/WeatherService';
-import IPService from '@/services/IPService';
+
 
 export default {
-  name: 'HelloWorld',
-  props:["msg"],
+  name: 'WeatherComponent',
   data(){
     return {
-      ipAddress: 0,
       weather:{
         locationInfo:{
           name: "Streetsboro",
@@ -60,28 +58,19 @@ export default {
           isDay: ""
         }
 
-      },
-      request: {
-        query: "New York, New York",
-        units: "f"
       }
     }
   },
   methods:{
     getWeatherReport() {
-      weatherService.getWeatherReport(this.request).then((response) => {
+      weatherService.getWeatherReport(this.$store.state.request).then((response) => {
         this.weather = response.data;
       });
     }
   },
-  created() {
-    IPService.getIPAddress().then((response) => response.json().then(data => {
-      this.ipAddress = data.ip;
-      this.request.query = this.ipAddress;
-      this.getWeatherReport();
-    }));
-
-  }
+  mounted(){
+    this.$root.$on("request-update", this.getWeatherReport)
+  },
 
 }
 </script>
