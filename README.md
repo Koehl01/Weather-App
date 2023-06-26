@@ -8,9 +8,9 @@ When the user first accesses the website, their IP address is used as the search
 ### Currently...
 This has been an enjoyable project so far. I Love the idea of a full background image for the weather depiction instead of just a small icon. Im also happy with color scheme of the main title bar and look forward to applying it to the other components. The weather API Im using is weatherstack and is well documented and also has a free limited option. 
 
-## Next steps...
+### Next steps...
 create user login. Currently, the server is connected to a Postgres database and I would like to get the ability to save users and their prefered locations set up.  
 
-## Roadblocks
+### Roadblocks
 Although this weather API has a free version, that version does not include a forcast and so far I've seen none that do. The News API is the same and even more expensive. This will also be my first time setting up ads so learning will have to occur before that happens. Another issue is the background images. The weather API can return a large variety of weather codes and both storing a large amount of corresponding Images and dynamically changing the background will be a new challenge for me. Any suggestions will be welcome!
 
